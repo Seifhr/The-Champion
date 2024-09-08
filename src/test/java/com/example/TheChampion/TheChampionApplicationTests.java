@@ -1,8 +1,5 @@
 package com.example.TheChampion;
 
-import com.example.TheChampion.Match.Match;
-import com.example.TheChampion.Match.MatchRepository;
-import com.example.TheChampion.Match.MatchService;
 import com.example.TheChampion.Player.Player;
 import com.example.TheChampion.Player.PlayerRepository;
 import com.example.TheChampion.Player.PlayerService;
@@ -11,8 +8,6 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;

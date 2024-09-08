@@ -31,12 +31,11 @@ public class LeagueController {
     @Operation(summary = "Close league")
     @PostMapping("/{leagueId}/close")
     public void closeLeague(@PathVariable Long leagueId) {
-        leagueService.closeLeague(leagueId);
         Player winner = playerService.getAllPlayers().stream().max(Comparator.comparingInt(Player::getPoints)).orElseThrow(() -> new RuntimeException("No players found"));
         String email = winner.getEmail();
         sendEmail(email,"Congratulations!!","Congratulations on winning the league");
+        leagueService.closeLeague(leagueId,winner.getId());
     }
-    @GetMapping("/send-email")
     public String sendEmail(
             @RequestParam String to,
             @RequestParam String subject,

@@ -1,6 +1,8 @@
 package com.example.TheChampion.League;
 
 import com.example.TheChampion.Match.Match;
+import com.example.TheChampion.Player.Player;
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -16,11 +18,14 @@ public class League {
 
     private boolean finished = false;
 
+    private Long WinnerID;
+
     // Constructors
     public League() {}
 
     public League(List<Match> matches) {
         this.matches = matches;
+        WinnerID = 0L;
     }
 
     //Setters and Getters
@@ -46,5 +51,13 @@ public class League {
 
     public void setFinished(boolean finished) {
         this.finished = finished;
+    }
+
+    public Long getWinnerID() {
+        return WinnerID;
+    }
+
+    public void setWinnerID(Long winnerID) {
+        WinnerID = winnerID;
     }
 }

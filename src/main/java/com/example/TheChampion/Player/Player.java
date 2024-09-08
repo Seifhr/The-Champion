@@ -12,9 +12,11 @@ public class Player {
     )
     private Long id;
     private String name;
+
     @Email(message = "Email is not valid")
     @Column(unique = true)
     private String email;
+
     private int points;
 
     //constructors
