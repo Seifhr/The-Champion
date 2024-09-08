@@ -36,7 +36,6 @@ public class LeagueController {
         String email = winner.getEmail();
         sendEmail(email,"Congratulations!!","Congratulations on winning the league");
     }
-    @GetMapping("/send-email")
     public String sendEmail(
             @RequestParam String to,
             @RequestParam String subject,
