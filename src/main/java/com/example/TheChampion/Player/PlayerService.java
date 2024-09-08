@@ -9,10 +9,14 @@ import java.util.List;
 public class PlayerService {
     @Autowired
     private PlayerRepository playerRepository;
+    private static final int MaximumSize=12;
 
     public Player registerPlayer(String name, String email) {
-        Player player = new Player(name, email);
-        return playerRepository.save(player);
+        if (getAllPlayers().size()<MaximumSize) {
+            Player player = new Player(name, email);
+            return playerRepository.save(player);
+        }
+        throw new IllegalStateException("maximum number of players");
     }
 
     public List<Player> getAllPlayers() {

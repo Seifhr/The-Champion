@@ -17,7 +17,6 @@ public class MatchService {
 
     public List<Match> createMatch() {
         List<Player> players = playerRepository.findAll();
-
         for (int i = 0; i < players.size(); i++) {
             for (int j = i + 1; j < players.size(); j++) {
                 Player player1 = players.get(i);

@@ -1,6 +1,8 @@
 package com.example.TheChampion.Player;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Pattern;
 
 @Entity
 public class Player {
@@ -10,6 +12,8 @@ public class Player {
     )
     private Long id;
     private String name;
+    @Email(message = "Email is not valid")
+    @Column(unique = true)
     private String email;
     private int points;
 
