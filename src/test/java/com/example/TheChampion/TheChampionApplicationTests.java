@@ -23,10 +23,10 @@ class TheChampionApplicationTests {
 
 	@Test
 	public void testRegisterPlayer() {
-		Player player = new Player("John Doe", "john.doe@example.com");
+		Player player = new Player("Seif", "seif@seif.com");
 		when(playerRepository.save(Mockito.any(Player.class))).thenReturn(player);
 
-		Player savedPlayer = playerService.registerPlayer("John Doe", "john.doe@example.com");
-		assertEquals("John Doe", savedPlayer.getName());
+		Player savedPlayer = playerService.registerPlayer("Seif", "seif@seif.com");
+		assertEquals("Seif", savedPlayer.getName());
 	}
 }

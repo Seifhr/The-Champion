@@ -1,31 +1,22 @@
 package com.example.TheChampion.League;
 
-import com.example.TheChampion.EmailService;
 import com.example.TheChampion.Match.Match;
-import com.example.TheChampion.Match.MatchService;
-import com.example.TheChampion.Player.Player;
-import com.example.TheChampion.Player.PlayerController;
-import com.example.TheChampion.Player.PlayerService;
+import com.example.TheChampion.Match.MatchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Comparator;
 import java.util.List;
 
 @Service
 public class LeagueService {
     @Autowired
-    private MatchService matchService;
+    private MatchRepository matchRepository;
 
     @Autowired
     private LeagueRepository leagueRepository;
 
-    @Autowired
-    private EmailService emailService;
-
-
     public League createLeague() {
-        List<Match> matches = matchService.createMatch();
+        List<Match> matches = matchRepository.findAll();
         League league = new League(matches);
         return leagueRepository.save(league);
     }
