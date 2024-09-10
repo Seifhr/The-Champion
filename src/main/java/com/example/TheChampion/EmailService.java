@@ -15,7 +15,7 @@ public class EmailService {
         message.setSubject(subject);
         message.setText(text);
         //enter email you want to send mail from
-        message.setFrom("seifhr@yahoo.com");
+        message.setFrom("");
 
         mailSender.send(message);
     }
