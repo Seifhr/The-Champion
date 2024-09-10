@@ -30,7 +30,7 @@ public class MatchServiceTest {
     }
 
     @Test
-    public void testCreatematch() {
+    public void testCreateMatch() {
         // Arrange
         Player player1 = new Player("Seif", "Seif@seif.com");
         Player player2 = new Player("ramy", "ramy@ramy.com");
